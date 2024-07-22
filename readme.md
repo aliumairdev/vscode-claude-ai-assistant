@@ -1,17 +1,19 @@
-# AI Assistant for VS Code
+# Claude AI Assistant for VS Code
 
-AI Assistant is a Visual Studio Code extension that provides AI-powered code suggestions to enhance your coding experience.
+Claude AI Assistant is a Visual Studio Code extension that provides AI-powered code suggestions using Anthropic's Claude AI to enhance your coding experience.
 
 ## Features
 
-- AI-powered code completion
+- Claude AI-powered code completion
 - On-demand code suggestions
-- Customizable API integration
+- Customizable API integration with Claude
+- Choice of Claude AI models, including free and paid options
 
 ## Requirements
 
 - Visual Studio Code v1.75.0 or higher
-- An API key for the AI service (e.g., OpenAI, Claude)
+- An API key for Claude AI (from Anthropic)
+- For paid models: An Anthropic organization ID
 
 ## Installation
 
@@ -22,39 +24,54 @@ AI Assistant is a Visual Studio Code extension that provides AI-powered code sug
 
 ## Configuration
 
-Before using the extension, you need to configure your API key and endpoint:
+Before using the extension, you need to configure your Claude AI API key and choose your preferred model:
 
 1. Open VS Code settings (File > Preferences > Settings).
-2. Search for "AI Assistant" in the settings search bar.
-3. Enter your API key in the "Api Key" field.
-4. (Optional) If you're using a different AI service, update the "Api Url" field.
+2. Search for "Claude AI Assistant" in the settings search bar.
+3. Enter your Claude AI API key in the "Api Key" field.
+4. Select your preferred Claude AI model from the "Model" dropdown. Options include:
+   - Free models:
+     - claude-2 (default)
+     - claude-instant-1
+     - claude-1
+   - Paid models:
+     - claude-2-100k
+     - claude-2-200k
+5. If you want to use a paid model:
+   - Set "Use Paid Model" to true
+   - Enter your Anthropic Organization ID in the "Organization Id" field
+6. (Optional) If needed, update the "Api Url" field.
 
 ## Usage
 
-### Getting AI Suggestions
+### Getting Claude AI Suggestions
 
 1. Place your cursor where you want a suggestion.
 2. Open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P).
-3. Type "Get AI Suggestion" and select the command.
+3. Type "Get Claude AI Suggestion" and select the command.
 
 ### Inline Completion
 
-As you type, the AI Assistant will automatically offer inline suggestions.
+As you type, the Claude AI Assistant will automatically offer inline suggestions.
 
 ## Extension Settings
 
 This extension contributes the following settings:
 
-- `ai-assistant.apiKey`: API Key for the AI service
-- `ai-assistant.apiUrl`: URL for the AI service API
+- `claude-ai-assistant.apiKey`: API Key for the Claude AI service
+- `claude-ai-assistant.apiUrl`: URL for the Claude AI API (default should work in most cases)
+- `claude-ai-assistant.model`: Claude AI model to use for suggestions
+- `claude-ai-assistant.usePaidModel`: Whether to use paid Claude AI models
+- `claude-ai-assistant.organizationId`: Organization ID for paid Claude AI models
 
 ## Known Issues
 
-[List any known issues or limitations here]
+- Claude AI's API is not publicly available as of the last update. This extension assumes a hypothetical public API and may need adjustments when the actual API is released.
+- The available models and pricing may change as Anthropic updates their offerings.
 
 ## Contributing
 
-We welcome contributions to the AI Assistant extension! Here's how you can help:
+We welcome contributions to the Claude AI Assistant extension! Here's how you can help:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -68,11 +85,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Thanks to [AI Service Provider] for their powerful API
+- Thanks to Anthropic for their powerful Claude AI models
 - Inspired by GitHub Copilot and other AI coding assistants
 
 ## Contact
 
-Your Name - [@a_aliumair](https://twitter.com/a_aliumair) - aliumair.dev@gmail.com
+Aliumair - [@a_aliumair](https://twitter.com/a_aliumair) - aliumair.dev@gmail.com
 
 Project Link: [https://github.com/aliumairdev/vscode-claude-ai-assistant](https://github.com/aliumairdev/vscode-claude-ai-assistant)

@@ -1,7 +1,7 @@
 {
-  "name": "ai-assistant",
-  "displayName": "AI Assistant",
-  "description": "AI-powered code suggestions",
+  "name": "claude-ai-assistant",
+  "displayName": "Claude AI Assistant",
+  "description": "AI-powered code suggestions using Claude AI",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.75.0"
@@ -16,27 +16,50 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/ai-assistant.git"
+    "url": "https://github.com/aliumairdev/vscode-claude-ai-assistant"
   },
+  "license": "MIT",
   "contributes": {
     "commands": [
       {
-        "command": "ai-assistant.getSuggestion",
-        "title": "Get AI Suggestion"
+        "command": "claude-ai-assistant.getSuggestion",
+        "title": "Get Claude AI Suggestion"
       }
     ],
     "configuration": {
-      "title": "AI Assistant",
+      "title": "Claude AI Assistant",
       "properties": {
-        "ai-assistant.apiKey": {
+        "claude-ai-assistant.apiKey": {
           "type": "string",
           "default": "",
-          "description": "API Key for the AI service"
+          "description": "API Key for the Claude AI service"
         },
-        "ai-assistant.apiUrl": {
+        "claude-ai-assistant.apiUrl": {
           "type": "string",
-          "default": "https://api.example.com/v1/completions",
-          "description": "URL for the AI service API"
+          "default": "https://api.anthropic.com/v1/completions",
+          "description": "URL for the Claude AI API"
+        },
+        "claude-ai-assistant.model": {
+          "type": "string",
+          "default": "claude-2",
+          "enum": [
+            "claude-2",
+            "claude-instant-1",
+            "claude-1",
+            "claude-2-100k",
+            "claude-2-200k"
+          ],
+          "description": "Claude AI model to use for suggestions (includes paid options)"
+        },
+        "claude-ai-assistant.usePaidModel": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use paid Claude AI models (requires additional configuration)"
+        },
+        "claude-ai-assistant.organizationId": {
+          "type": "string",
+          "default": "",
+          "description": "Organization ID for paid Claude AI models"
         }
       }
     }
